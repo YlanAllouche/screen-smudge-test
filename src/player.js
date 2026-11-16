@@ -1,13 +1,10 @@
 // Shared by the browser and terminal renderers.
 export function createPlayer(text) {
-  const compact = text
-    .replace(/\r\n?/g, '\n')
-    .replace(/\s+/g, whitespace => whitespace === ' ' ? ' '
-      : ' ' + (whitespace.includes('\n') ? whitespace.split('\n').length > 2 ? '¶' : '↵' : '')
-      + (whitespace.replace(/\n/g, '') ? '⋯' : '') + ' ')
+  const display = text
+    .replace(/\s/g, '·')
     .replace(/[\x00-\x08\x0e-\x1f\x7f-\x9f]/g, '�');
   const characters = Array.from(
-    new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(compact),
+    new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(display),
     segment => segment.segment,
   );
 

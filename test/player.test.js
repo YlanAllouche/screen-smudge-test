@@ -32,10 +32,10 @@ for (const content of ['A', 'abcdefg', '0123456789ABCDEFGHIJK']) {
   });
 }
 
-test('whitespace markers preserve collapsed structure and Unicode graphemes', () => {
+test('each whitespace character becomes a dot while Unicode graphemes stay intact', () => {
   const player = createPlayer('a\n\n    b\tc\r\nd\x1b[31m é 👩🏽‍💻');
-  player.resize(23, 1);
-  assert.equal(frame(player).join(''), 'a ¶⋯ b ⋯ c ↵ d�[31m é 👩🏽‍💻');
+  player.resize(22, 1);
+  assert.equal(frame(player).join(''), 'a······b·c··d�[31m·é·👩🏽‍💻');
 });
 
 test('playback controls hide immediately, reveal on activity, and stay visible while paused', () => {
