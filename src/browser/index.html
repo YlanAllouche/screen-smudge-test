@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Screen Smudge Test</title>
+<link rel="stylesheet" href="styles.css">
+<nav>
+  <button id="play">Play</button>
+  <button id="theme">Black / white</button>
+  <label>
+    <input id="speed" aria-label="Interval in milliseconds" type="number" min="1" value="1000">
+    <span id="unit">ms / page</span>
+  </label>
+  <select id="font" aria-label="Font">
+    <option value="monospace">Mono</option>
+    <option value="system-ui">System</option>
+    <option value="serif">Serif</option>
+    <option value="sans-serif">Sans</option>
+  </select>
+  <button id="stream" aria-pressed="false">Stream</button>
+  <output id="position"></output>
+</nav>
+<canvas id="screen" aria-label="File contents"></canvas>
+<script src="app.js"></script>

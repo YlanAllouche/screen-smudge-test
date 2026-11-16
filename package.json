@@ -1,0 +1,27 @@
+{
+  "name": "screen-smudge-test",
+  "version": "0.1.0",
+  "description": "Fill a browser or terminal with text from local files.",
+  "type": "module",
+  "bin": {
+    "screen-smudge-test": "dist/screen-smudge-test.cjs"
+  },
+  "files": [
+    "dist/screen-smudge-test.cjs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test test/*.test.js",
+    "start": "node dist/screen-smudge-test.cjs"
+  },
+  "dependencies": {
+    "isbinaryfile": "^5.0.7",
+    "string-width": "^4.2.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
