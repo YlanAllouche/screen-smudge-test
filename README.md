@@ -10,15 +10,15 @@ Point this at a folder of notes for familiar words, then compare apps and displa
 Requires Node.js 18+. Run in a browser:
 
 ```sh
-npx --ignore-scripts --yes --package=github:YlanAllouche/screen-smudge-test screen-smudge-test .
+npx --allow-git=all --ignore-scripts --yes --package=github:YlanAllouche/screen-smudge-test screen-smudge-test .
 ```
 
 Or in a PTY:
 
 ```sh
-npx --ignore-scripts --yes --package=github:YlanAllouche/screen-smudge-test screen-smudge-test --terminal .
+npx --allow-git=all --ignore-scripts --yes --package=github:YlanAllouche/screen-smudge-test screen-smudge-test --terminal .
 ```
 
 Replace `.` with any folder, or leave it out to use the current one. In browser mode, open the printed address and choose the font, speed, and light or dark background. In the terminal: **Space** plays/pauses, **S** switches modes, **B** changes background, **+ / −** changes speed, and **Q** quits.
 
-`--ignore-scripts` uses the included build. With npm 12, also add `--allow-git=all`.
+`--allow-git=all` permits downloading the package from GitHub. `--ignore-scripts` uses the included build.
